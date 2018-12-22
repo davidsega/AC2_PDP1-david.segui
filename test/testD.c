@@ -11,16 +11,16 @@ void testPosition(){
 	int j = 0;
 	printf("DIRECCION i: %d j: %d\n",i,j);
 	printf("NORTH\n");
-	advanceInDirection(&i,&j,"NORTH");
+	advanceInDirection(&i,&j,0);
 	printf("DIRECCION i: %d j: %d\n",i,j);
 	printf("SOUTH\n");
-	advanceInDirection(&i,&j,"SOUTH");
+	advanceInDirection(&i,&j,2);
 	printf("DIRECCION i: %d j: %d\n",i,j);
 	printf("EAST\n");
-	advanceInDirection(&i,&j,"EAST");
+	advanceInDirection(&i,&j,1);
 	printf("DIRECCION i: %d j: %d\n",i,j);
 	printf("WEST\n");
-	advanceInDirection(&i,&j,"WEST");
+	advanceInDirection(&i,&j,3);
 	printf("DIRECCION i: %d j: %d\n",i,j);
 
 }

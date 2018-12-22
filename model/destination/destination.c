@@ -57,17 +57,17 @@ double getAverageHotelPrice(Destination dest) {
 void advanceInDirection(int *i, int *j, int direction) {
 	switch (direction) {
 		case NORTH:
-			(*j)--;
+			(*j)++;
 			break;
 		case EAST:
 			(*i)++;
 			break;
 		case SOUTH:
-			(*j)++;
+			(*j)--;
 			break;
 		case WEST:
-		default:
 			(*i)--;
+		default:
 			break;
 	}
 }
