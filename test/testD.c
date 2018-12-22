@@ -6,9 +6,27 @@
 #include <math.h>
 #define PATH  "../data/mainDatabase.nymal"
 
+void testPosition(){
+	int i = 0;
+	int j = 0;
+	printf("DIRECCION i: %d j: %d\n",i,j);
+	printf("NORTH\n");
+	advanceInDirection(&i,&j,"NORTH");
+	printf("DIRECCION i: %d j: %d\n",i,j);
+	printf("SOUTH\n");
+	advanceInDirection(&i,&j,"SOUTH");
+	printf("DIRECCION i: %d j: %d\n",i,j);
+	printf("EAST\n");
+	advanceInDirection(&i,&j,"EAST");
+	printf("DIRECCION i: %d j: %d\n",i,j);
+	printf("WEST\n");
+	advanceInDirection(&i,&j,"WEST");
+	printf("DIRECCION i: %d j: %d\n",i,j);
+
+}
 
 void main(char** args){
-
+	testPosition();
 }
 
 
