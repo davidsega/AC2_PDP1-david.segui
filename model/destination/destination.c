@@ -90,7 +90,7 @@ double travelThroughAltitude(double ** travelAltitude, int i, int j, int n) {
 	}
 
 	int newI = i, newJ = j, min = NORTH;
-	double minAlt = 0;
+	double minAlt = INFINITY;
 
 	for (int k = 0; k < DIRECTIONS; k++) {
 		double alt = checkAltitudeInDirection(travelAltitude, i, j, k, n);
@@ -100,18 +100,14 @@ double travelThroughAltitude(double ** travelAltitude, int i, int j, int n) {
 			min = k;
 		}
 	}
-
 	advanceInDirection(&newI, &newJ, min);
-
 	return travelAltitude[i][j] + travelThroughAltitude(travelAltitude, i, j, n);
 }
 
 // Retorna una estimació del temps de viatge des de BCN segons l'altitud
 double getTimeFromBcn(Destination dest) {
 	double time = getDistanceFromBcn(dest) / TIME_FACTOR;
-
 	time += travelThroughAltitude(dest.travelAltitude, 0, 0, dest.n);
-
 	return time;
 }
 
