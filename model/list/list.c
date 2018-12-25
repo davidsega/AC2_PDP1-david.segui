@@ -176,4 +176,5 @@ void destroy(List * l) {
 	free(l->last);
 	l->first = NULL;
 	l->last = NULL;
+	l->poi = NULL;
 }
