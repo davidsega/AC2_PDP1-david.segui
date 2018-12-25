@@ -1,7 +1,7 @@
 #include "list.h"
 #include <stdlib.h>
 #include <memory.h>
-
+#include "../destination/destination.h"
 
 List create() {
 	List l;
@@ -103,9 +103,14 @@ void removePoi(List * l, int mode) {
 
 			aux -> prev[i] -> next[i] = aux -> next[i];
 			aux -> next[i] -> prev[i] = aux -> prev[i];
+			aux->next[i] = NULL;
+			aux->prev[i] = NULL;
 		}
+		freeAll(aux->dest);
+		free(aux);
 		l -> n--;
 	}
+
 }
 
 void goStart(List * l, int mode) {
