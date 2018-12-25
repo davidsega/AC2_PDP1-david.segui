@@ -114,14 +114,14 @@ double getTimeFromBcn(Destination dest) {
 // Recorre recursivament la matriu buscant la mínima altitud i mapejant el recorregut
 // Podeu assumir que les dades sempre donaran un camí decreixent en altitud de 0, 0  a n-1, n-1
 void mapAltitude(double ** travelAltitude, char ** map, int i, int j, int n) {
-	map[i + 1][j + 1] = ' ';
+	map[i][j] = ' ';
 
 	if (i == n - 1 && j == n - 1) {
 		return;
 	}
 
 	int newI = i, newJ = j, min = NORTH;
-	double minAlt = 0;
+	double minAlt = INFINITY;
 
 	for (int k = 0; k < DIRECTIONS; k++) {
 		double alt = checkAltitudeInDirection(travelAltitude, i, j, k, n);
