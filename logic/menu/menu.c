@@ -2,7 +2,7 @@
 #include "../utils/utils.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <conio.h>
 #define FIRST_OPTION 1
 #define LAST_OPTION 4
 
