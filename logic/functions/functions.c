@@ -27,7 +27,7 @@ int comparePrices(const void * a, const void * b) {
 	double aValue = *((double *) a);
 	double bValue = *((double *) b);
 
-	return round(bValue + aValue);
+	return round(bValue - aValue);
 }
 
 void planTrip(List *l){
@@ -43,7 +43,6 @@ void planTrip(List *l){
 			printOptionError();
         }
     } while (destination < 1 || destination > l->n);
-
     do {
         printPlanMenu();
         option = askUserForOption();
@@ -57,9 +56,10 @@ void planTrip(List *l){
 	goNextTimes(l, 0, destination-1);
 	d = readPoi(*l,0);
 
+
     switch (option) {
         case 1:
-
+			printf("\t\t %s\n",  d.name);
         	printAverage(getAverageHotelPrice(d));
 
         	qsort(d.hotelPrices, d.nHotels, sizeof(double), comparePrices);
