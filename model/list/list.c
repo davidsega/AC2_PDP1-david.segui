@@ -30,7 +30,7 @@ List create() {
 
 void insert(List * l, Destination d) {
 	int i;
-	int condicio = 0;
+	int condicio = 1;
 
 
 	//Demanem memòria pel nou node i comprovem si n'hem obtingut
@@ -45,16 +45,15 @@ void insert(List * l, Destination d) {
 		l->poi[i] = l->first;
 
 		do {
-			//Avancem al següent element i mirem si aquest encara l'hem de saltar
 			l->poi[i] = l->poi[i]->next[i];
-
+			//Seguim saltant mentre no arribem al darrer element i es segueixi complint la condició de salt
 			if (l->poi[i] == l->last) {
 				break;
 			}
-			printf("%d", BY_NAME);
 
 			//Les condicions per saltar un element depenen del mode d'ordenació
 			switch (i) {
+
 				case BY_NAME:
 					condicio = strcmp(d.name, l->poi[i]->dest.name) > 0;
 					break;
@@ -68,13 +67,12 @@ void insert(List * l, Destination d) {
 					condicio = getTimeFromBcn(d) > getTimeFromBcn(l->poi[i]->dest);
 					break;
 				default:
-
 					//Si per un casual algú decideix afegir més camps, ens protegim ordenant segons entrada
 					condicio = 0;
 					break;
 			}
-		ç
-			//Seguim saltant mentre no arribem al darrer element i es segueixi complint la condició de salt
+			//Avancem al següent element i mirem si aquest encara l'hem de saltar
+
 		} while (condicio);
 
 		//Apuntem els punters del nou node
@@ -124,7 +122,7 @@ void goNext(List * l, int mode) {
 
 void goNextTimes(List * l, int mode, int times) {
 	int i;
-	for (i = 1; i < times; i++) {
+	for (i = 0; i < times; i++) {
 		if (isEnd(*l, mode)) {
 			break;
 		}
