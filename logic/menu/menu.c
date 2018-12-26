@@ -37,6 +37,9 @@ int isExit(int option) {
 	return option == LAST_OPTION;
 }
 
+
+
+
 char * readUserString() {
 	int i = 0;
 	int size = 10;
@@ -56,10 +59,38 @@ char * readUserString() {
 	} while (tmp != '\n');
 
 	resize(&ret, i + 1);
+	ret[i] ='\0';
+	return ret;
+}
+/*
+char * readUserString() {
+	int i = 0;
+	int size = 1;
+	char tmp;
+	char *ret = (char *) malloc(sizeof(char) * size);
+
+	tmp = getchar();
+	do {
+		printf("ret pre: %s \n",ret);
+		printf("i pre: %d\n",i);
+		printf("lenght pre: %d\n",strlen(ret));
+		i++[ret] = tmp; //Asigna y luego incrementa
+		printf("i post: %d\n",i);
+		printf("ret post: %s \n",ret);
+		printf("lenght post: %d\n",strlen(ret));
+		if (i >= size) {
+			printf("resize dale: %d\n",size);
+			size++;
+			resize(&ret, size);
+		}
+		tmp = getchar();
+	} while (tmp != '\n');
+
+	resize(&ret, size);
 
 	return ret;
 }
-
+*/
 char * askUserForPath() {
 	printf("\tEnter the path of the new DB: ");
 
