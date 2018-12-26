@@ -14,7 +14,6 @@ int main() {
 
 	if (f == NULL) {
 		printFileError(PATH);
-		printf("error");
 		return -1;
 	}
 
