@@ -47,7 +47,7 @@ void planTrip(List *l){
         printPlanMenu();
         option = askUserForOption();
 
-		if (destination < 1 || destination > 2) {
+		if (option < 1 || option > 2) {
 			printOptionError();
 		}
     } while (option < 1 || option > 2);
