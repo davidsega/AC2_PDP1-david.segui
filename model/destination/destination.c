@@ -183,7 +183,7 @@ char * readString(FILE * file) {
 	} while(tmp != '\n');
 
 	resize(&ret, i + 1);
-
+	ret[i] = '\0';
 
 	return ret;
 }
