@@ -194,7 +194,7 @@ Destination readFromFile(FILE * file) {
 
 	char dummy;
 	fscanf(file, "%c", &dummy);
-
+	fscanf(file, "%c", &dummy);
 	d.name = readString(file);
 	d.country = readString(file);
 
