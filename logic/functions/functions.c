@@ -59,7 +59,7 @@ void planTrip(List *l){
 
     switch (option) {
         case 1:
-			printf("\t\t %s\n",  d.name);
+
         	printAverage(getAverageHotelPrice(d));
 
         	qsort(d.hotelPrices, d.nHotels, sizeof(double), comparePrices);
@@ -94,10 +94,11 @@ void readWholeFile(FILE * f, List * l) {
 
 void readNewFile(List * l) {
 	char *input = askUserForPath();
-
-	FILE *f = fopen(input, "r");
+	printf("%s \n",input);
+	FILE *f = fopen(input, "r+");
 
 	if (f != NULL) {
+		destroy(l);
 		*l = create();
 		readWholeFile(f, l);
 	} else {
